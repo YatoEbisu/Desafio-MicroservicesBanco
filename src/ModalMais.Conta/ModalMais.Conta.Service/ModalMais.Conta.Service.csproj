@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <NoWarn>618</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Extensions.FluentValidation.Br" Version="1.0.2"/>
+        <PackageReference Include="FluentValidation" Version="10.3.3"/>
+        <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.9"/>
+        <PackageReference Include="Notie" Version="2.0.1"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.1.5"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ModalMais.Conta.Domain\ModalMais.Conta.Domain.csproj"/>
+        <ProjectReference Include="..\ModalMais.Conta.Infra.Data\ModalMais.Conta.Infra.Data.csproj"/>
+    </ItemGroup>
+
+</Project>

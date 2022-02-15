@@ -1,0 +1,138 @@
+version: '3.1'
+
+services:
+    zookeeper:
+        image: confluentinc/cp-zookeeper:latest
+        networks: 
+          - api_network
+        environment:
+            ZOOKEEPER_CLIENT_PORT: 2181
+            ZOOKEEPER_TICK_TIME: 2000
+    
+    kafka:
+        image: confluentinc/cp-kafka:latest
+        networks: 
+            - api_network
+        depends_on:
+            - zookeeper
+        ports:
+            - 9092:9092
+        environment:
+            KAFKA_BROKER_ID: 1
+            KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+            KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+            KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+            KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+            KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+        command: sh -c "((sleep 15 && kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic CADASTRO_CONTA_CORRENTE_ATUALIZADO)&) && /etc/confluent/docker/run "
+    
+    kafdrop:
+        image: obsidiandynamics/kafdrop:latest
+        networks: 
+            - api_network
+        depends_on:
+            - kafka
+        ports:
+            - 19000:9000
+        environment:
+            KAFKA_BROKERCONNECT: kafka:29092
+
+    postgres:
+        image: postgres:latest
+        restart: always
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_USER: root
+            POSTGRES_PASSWORD: root
+            POSTGRES_DB: Transferencia
+        networks: 
+            - api_network
+        container_name: postgres
+
+    pgadmin:
+        image: dpage/pgadmin4
+        restart: always
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "teste@email.com.br"
+            PGADMIN_DEFAULT_PASSWORD: "root@2021"
+        ports:
+            - "16543:80"
+        depends_on:
+            - postgres
+        networks:
+            - api_network
+        container_name: pgadmin
+
+    mongo:
+        image: mongo
+        restart: always
+        ports:
+            - 27017:27017
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: root
+        networks: 
+            - api_network
+        container_name: mongo
+
+    mongo-express:
+        image: mongo-express
+        restart: always
+        ports:
+            - 8081:8081
+        environment:
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: root
+            ME_CONFIG_MONGODB_URL: mongodb://root:root@mongo:27017/
+        networks: 
+            - api_network
+        container_name: mongo_express
+
+    redis:
+        image: redis
+        command: redis-server
+        ports:
+            - "6379:6379"
+        networks: 
+            - api_network
+        container_name: redis
+
+    rebrow:
+    # How to use: 
+    # Na interface do rebrow usamos o nome do container do redis
+    # Exemplo: http://localhost:5001/redis:6379/0/
+        image: marian/rebrow
+        ports:
+            - "5001:5001"
+        networks: 
+            - api_network
+        container_name: redis-rebrow
+
+    api_conta:
+        build:
+            context: ./src
+            dockerfile: ./ModalMais.Conta/ModalMais.Conta.Api/Dockerfile
+        ports: 
+            - 80:80
+        depends_on:
+            - mongo
+        networks: 
+            - api_network
+        container_name: api_conta
+    
+    api_transferencia:
+        build:
+            context: ./src
+            dockerfile: ./ModalMais.Transferencia/ModalMais.Transferencia.Api/Dockerfile
+        ports:
+            - 81:80
+        depends_on:
+            - postgres
+        networks: 
+            - api_network
+        container_name: api_transferencia
+
+networks:
+    api_network:
+        driver: bridge

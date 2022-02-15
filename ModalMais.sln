@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModalMais.Conta.Test", "tests\ModalMais.Conta.Test\ModalMais.Conta.Test.csproj", "{0694747F-CEE1-46F8-9960-51DA72A5EBD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0B089634-2C12-4AEE-B83E-AF372CF80EBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C09CBDBF-DCE6-49A6-847D-E7A8EA1F1704}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModalMais.Conta", "ModalMais.Conta", "{FE57CB31-F6C4-436E-A3D2-363046AA8513}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModalMais.Transferencia", "ModalMais.Transferencia", "{D4095F0F-2DA5-446F-B8B3-E62A0B8BE8C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModalMais.Conta.Api", "src\ModalMais.Conta\ModalMais.Conta.Api\ModalMais.Conta.Api.csproj", "{29DB9109-D36A-4AE8-80A4-8599A01B713B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModalMais.Conta.Domain", "src\ModalMais.Conta\ModalMais.Conta.Domain\ModalMais.Conta.Domain.csproj", "{2098ED02-5929-42A9-AA8C-4D3CF241C7A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModalMais.Conta.Infra.Data", "src\ModalMais.Conta\ModalMais.Conta.Infra.Data\ModalMais.Conta.Infra.Data.csproj", "{52A85CF3-EA7A-4850-B956-C16BF6573FAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModalMais.Conta.Service", "src\ModalMais.Conta\ModalMais.Conta.Service\ModalMais.Conta.Service.csproj", "{22376412-133D-4186-AA82-C0C2E2577F22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModalMais.Transferencia.Api", "src\ModalMais.Transferencia\ModalMais.Transferencia.Api\ModalMais.Transferencia.Api.csproj", "{3AB97CC9-A87E-45C8-8878-D4D6F19FA788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModalMais.Transferencia.Test", "tests\ModalMais.Transferencia.Test\ModalMais.Transferencia.Test.csproj", "{DECEE0FD-8E42-449B-AC56-0C4A5C18219C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0694747F-CEE1-46F8-9960-51DA72A5EBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0694747F-CEE1-46F8-9960-51DA72A5EBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0694747F-CEE1-46F8-9960-51DA72A5EBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0694747F-CEE1-46F8-9960-51DA72A5EBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29DB9109-D36A-4AE8-80A4-8599A01B713B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29DB9109-D36A-4AE8-80A4-8599A01B713B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29DB9109-D36A-4AE8-80A4-8599A01B713B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29DB9109-D36A-4AE8-80A4-8599A01B713B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2098ED02-5929-42A9-AA8C-4D3CF241C7A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2098ED02-5929-42A9-AA8C-4D3CF241C7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2098ED02-5929-42A9-AA8C-4D3CF241C7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2098ED02-5929-42A9-AA8C-4D3CF241C7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52A85CF3-EA7A-4850-B956-C16BF6573FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A85CF3-EA7A-4850-B956-C16BF6573FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A85CF3-EA7A-4850-B956-C16BF6573FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A85CF3-EA7A-4850-B956-C16BF6573FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22376412-133D-4186-AA82-C0C2E2577F22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22376412-133D-4186-AA82-C0C2E2577F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22376412-133D-4186-AA82-C0C2E2577F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22376412-133D-4186-AA82-C0C2E2577F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB97CC9-A87E-45C8-8878-D4D6F19FA788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB97CC9-A87E-45C8-8878-D4D6F19FA788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB97CC9-A87E-45C8-8878-D4D6F19FA788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB97CC9-A87E-45C8-8878-D4D6F19FA788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DECEE0FD-8E42-449B-AC56-0C4A5C18219C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECEE0FD-8E42-449B-AC56-0C4A5C18219C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECEE0FD-8E42-449B-AC56-0C4A5C18219C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECEE0FD-8E42-449B-AC56-0C4A5C18219C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0694747F-CEE1-46F8-9960-51DA72A5EBD2} = {0B089634-2C12-4AEE-B83E-AF372CF80EBF}
+		{FE57CB31-F6C4-436E-A3D2-363046AA8513} = {C09CBDBF-DCE6-49A6-847D-E7A8EA1F1704}
+		{D4095F0F-2DA5-446F-B8B3-E62A0B8BE8C2} = {C09CBDBF-DCE6-49A6-847D-E7A8EA1F1704}
+		{29DB9109-D36A-4AE8-80A4-8599A01B713B} = {FE57CB31-F6C4-436E-A3D2-363046AA8513}
+		{2098ED02-5929-42A9-AA8C-4D3CF241C7A4} = {FE57CB31-F6C4-436E-A3D2-363046AA8513}
+		{52A85CF3-EA7A-4850-B956-C16BF6573FAB} = {FE57CB31-F6C4-436E-A3D2-363046AA8513}
+		{22376412-133D-4186-AA82-C0C2E2577F22} = {FE57CB31-F6C4-436E-A3D2-363046AA8513}
+		{3AB97CC9-A87E-45C8-8878-D4D6F19FA788} = {D4095F0F-2DA5-446F-B8B3-E62A0B8BE8C2}
+		{DECEE0FD-8E42-449B-AC56-0C4A5C18219C} = {0B089634-2C12-4AEE-B83E-AF372CF80EBF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E61CA50-0AE7-4EE1-AA36-464F2D6BDB42}
+	EndGlobalSection
+EndGlobal

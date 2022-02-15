@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Remove="C:\Users\Vaivoa\.nuget\packages\mongodb.driver.core\2.13.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\win\snappy32.dll"/>
+        <Content Remove="C:\Users\Vaivoa\.nuget\packages\mongodb.driver.core\2.13.1\contentFiles\any\netstandard2.1\Core\Compression\Snappy\lib\win\snappy64.dll"/>
+        <Content Remove="C:\Users\Vaivoa\.nuget\packages\mongodb.driver.core\2.13.1\contentFiles\any\netstandard2.1\Core\Compression\Zstandard\lib\win\libzstd.dll"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Confluent.Kafka" Version="1.7.0"/>
+        <PackageReference Include="Humanizer" Version="2.11.10"/>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2"/>
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0"/>
+        <PackageReference Include="MongoDB.Driver" Version="2.13.1"/>
+        <PackageReference Include="MongoDB.Driver.Core" Version="2.13.1"/>
+        <PackageReference Include="ServiceStack.Core" Version="5.12.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Remove="C:\Users\Vaivoa\.nuget\packages\mongodb.driver.core\2.13.1\build\../runtimes/win/native/libzstd.dll"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Remove="C:\Users\Vaivoa\.nuget\packages\mongodb.driver.core\2.13.1\build\../runtimes/win/native/libzstd.dll"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ModalMais.Conta.Domain\ModalMais.Conta.Domain.csproj"/>
+    </ItemGroup>
+
+</Project>
